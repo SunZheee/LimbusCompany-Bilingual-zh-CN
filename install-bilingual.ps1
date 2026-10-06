@@ -1,4 +1,4 @@
-# install-bilingual.ps1 —— 把本仓库的双语语言包安装进《边狱公司》
+﻿# install-bilingual.ps1 —— 把本仓库的双语语言包安装进《边狱公司》
 #
 # 用法（普通 PowerShell 即可，不需要管理员）：
 #   & .\install-bilingual.ps1
@@ -37,9 +37,12 @@ if ([System.IO.Directory]::Exists($dst)) {
 [void][System.IO.Directory]::CreateDirectory($dst)
 
 Write-Host "复制语言文件 $src -> $dst"
+# StoryFields.json 是合并规则文件，不是语言表，不进游戏目录
+$skip = @('StoryFields.json')
 $n = 0
 foreach ($f in [System.IO.Directory]::GetFiles($src, '*.json', [System.IO.SearchOption]::AllDirectories)) {
   $rel = $f.Substring($src.Length).TrimStart('\')
+  if ($skip -contains [System.IO.Path]::GetFileName($rel)) { Write-Host "跳过规则文件: $rel"; continue }
   $to = Join-Path $dst $rel
   $dir = [System.IO.Path]::GetDirectoryName($to)
   if (-not [System.IO.Directory]::Exists($dir)) { [void][System.IO.Directory]::CreateDirectory($dir) }
