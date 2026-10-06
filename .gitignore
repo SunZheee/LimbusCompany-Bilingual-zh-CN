@@ -1,0 +1,6 @@
+# 保留 Font\Title 空目录（游戏会读取该路径）
+!Font/Title/.gitkeep
+
+# 校验报告等本地产物
+verify-report.txt
+shape-report.txt

@@ -1,0 +1,20 @@
+{
+  "note": "双语范围声明：只有路径命中 scopes[].pattern 的文件才会把 excludeFields 之外的字符串字段做成「英文 + 换行 + 中文」。未命中的文件整份保持中文单语（只复制已安装汉化包的中文文件）。",
+  "sep": "\n",
+  "excludeFields": ["id", "dataList", "codeName", "abilityID", "model", "fileName", "level"],
+  "scopes": [
+    { "pattern": "StoryData\\*.json",         "desc": "剧情对白/旁白（含第七、八、九、十章）" },
+    { "pattern": "AbnormalityGuides*.json",   "desc": "观察记录：异想体的线索与小故事" },
+    { "pattern": "StoryTheaterDanteNote*.json",       "desc": "但丁笔记条目" },
+    { "pattern": "StoryTheaterDanteNoteDetail*.json", "desc": "但丁笔记正文" },
+    { "pattern": "StoryTheaterMain*.json",            "desc": "剧场·主线文字" },
+    { "pattern": "StoryTheaterMirrorWorld.json",      "desc": "剧场·镜世界文字" },
+    { "pattern": "StoryTheaterOther.json",            "desc": "剧场·其他文字" },
+    { "pattern": "Egos.json",       "desc": "E.G.O 名称与说明" },
+    { "pattern": "Egos-*.json",     "desc": "E.G.O 名称与说明（后续批次）" },
+    { "pattern": "Personalities.json",      "desc": "人格名称与说明" },
+    { "pattern": "Personalities-*.json",    "desc": "人格名称与说明（后续批次）" },
+    { "pattern": "Personality_Get_Condition.json", "desc": "人格获取条件文本" },
+    { "pattern": "Story-a1c8p3.json", "desc": "但丁能力标语" }
+  ]
+}

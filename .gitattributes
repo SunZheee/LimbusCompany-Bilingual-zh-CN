@@ -1,0 +1,7 @@
+# 字体 22.8 MB，超过 GitHub 单文件 25 MB 网页上传限制，用 Git LFS 存放
+Font/Context/ChineseFont.ttf filter=lfs diff=lfs merge=lfs -text
+# JSON 保持原始字节，不做换行归一化（游戏按字节读取，避免任何差异）
+*.json -text
+# 脚本与文本用 CRLF / LF
+*.ps1 text eol=crlf
+*.md  text eol=lf
